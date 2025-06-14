@@ -1,22 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl" class="lang-nl"><!-- Default language set to Dutch -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Belles Ardennes</title>
-  <meta name="description" content="Belles Ardennes – Vacation home in the Ardennes">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Belles Ardennes – Vakantiehuis in Vielsalm</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <!-- Swiper.js carousel library (CSS & JS) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- FullCalendar library (CSS optional, and JS) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/main.min.css" />
 </head>
-<body>
-  <header id="site-header"></header>
+<body class="lang-nl">
+  <!-- Header/Nav Section -->
+  <header>
+    <nav>
+      <!-- Language Switcher Dropdown -->
+      <select id="lang-select" aria-label="Language selector">
+        <option value="nl">NL</option>
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+        <option value="de">DE</option>
+      </select>
+      <!-- Navigation Menu (anchors scroll to sections) -->
+      <ul class="menu">
+        <!-- Dutch menu (shown when lang-nl is active) -->
+        <ul class="menu lang-content lang-nl">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#availability">Beschikbaarheid</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <!-- English menu -->
+        <ul class="menu lang-content lang-en">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#availability">Availability</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <!-- French menu -->
+        <ul class="menu lang-content lang-fr">
+          <li><a href="#home">Accueil</a></li>
+          <li><a href="#availability">Disponibilités</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <!-- German menu -->
+        <ul class="menu lang-content lang-de">
+          <li><a href="#home">Startseite</a></li>
+          <li><a href="#availability">Verfügbarkeit</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Sections -->
   <main>
-    <section class="hero">
-      <h1>Welcome to Belles Ardennes</h1>
-      <p>Your ideal getaway in the Ardennes</p>
+    <!-- Hero/Home Section with Carousel -->
+    <section id="home">
+      <h1 class="lang-content lang-nl">Welkom bij Belles Ardennes</h1>
+      <h1 class="lang-content lang-en">Welcome to Belles Ardennes</h1>
+      <h1 class="lang-content lang-fr">Bienvenue à Belles Ardennes</h1>
+      <h1 class="lang-content lang-de">Willkommen bei Belles Ardennes</h1>
+      <p class="lang-content lang-nl">
+        Belles Ardennes is een ruime vakantiewoning in Vielsalm, geschikt voor 26 personen – jong en oud zullen zich hier thuis voelen!
+      </p>
+      <p class="lang-content lang-en">
+        Belles Ardennes is a spacious holiday home in Vielsalm, suitable for up to 26 guests – a perfect getaway for young and old alike!
+      </p>
+      <p class="lang-content lang-fr">
+        Belles Ardennes est une spacieuse maison de vacances à Vielsalm, pouvant accueillir jusqu'à 26 personnes – idéale pour petits et grands !
+      </p>
+      <p class="lang-content lang-de">
+        Belles Ardennes ist ein großzügiges Ferienhaus in Vielsalm, geeignet für bis zu 26 Personen – der ideale Rückzugsort für Jung und Alt!
+      </p>
+
+      <!-- Image Carousel (Swiper) -->
+      <div class="swiper"><!-- Swiper container :contentReference[oaicite:3]{index=3} -->
+        <div class="swiper-wrapper">
+          <!-- Slides with images -->
+          <div class="swiper-slide"><img src="images/carousel1.jpg" alt="Indoor heated pool at Belles Ardennes"></div>
+          <div class="swiper-slide"><img src="images/carousel2.jpg" alt="Spacious living area of Belles Ardennes"></div>
+          <div class="swiper-slide"><img src="images/carousel3.jpg" alt="Garden and playground view"></div>
+        </div>
+        <!-- Pagination and Navigation (if enabled by JS) -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev" aria-label="Previous slide"></div>
+        <div class="swiper-button-next" aria-label="Next slide"></div>
+      </div>
     </section>
-    <!-- More sections here -->
+
+    <!-- Availability Calendar Section -->
+    <section id="availability">
+      <h2 class="lang-content lang-nl">Beschikbaarheid</h2>
+      <h2 class="lang-content lang-en">Availability</h2>
+      <h2 class="lang-content lang-fr">Disponibilités</h2>
+      <h2 class="lang-content lang-de">Verfügbarkeit</h2>
+      <p class="lang-content lang-nl">
+        Raadpleeg de kalender om te zien wanneer ons vakantiehuis beschikbaar is. Groene vakjes betekenen beschikbaar, rode zijn geboekt.
+      </p>
+      <p class="lang-content lang-en">
+        Check the calendar below to see when our holiday home is available. Green slots indicate availability, red slots are booked.
+      </p>
+      <p class="lang-content lang-fr">
+        Consultez le calendrier pour voir les dates disponibles de notre gîte. Les cases vertes indiquent les disponibilités, les rouges sont déjà réservées.
+      </p>
+      <p class="lang-content lang-de">
+        Prüfen Sie im Kalender, wann unser Ferienhaus verfügbar ist. Grün markierte Tage sind frei, rot markierte sind bereits gebucht.
+      </p>
+      <!-- FullCalendar placeholder -->
+      <div id="availability-calendar"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 class="lang-content lang-nl">Contacteer ons</h2>
+      <h2 class="lang-content lang-en">Contact Us</h2>
+      <h2 class="lang-content lang-fr">Contactez-nous</h2>
+      <h2 class="lang-content lang-de">Kontakt</h2>
+      <p class="lang-content lang-nl">
+        Voor vragen of reserveringen, stuur een e-mail naar <a href="mailto:info@bellesardennes.be">info@bellesardennes.be</a> of bel ons op +32 123 456 789.
+      </p>
+      <p class="lang-content lang-en">
+        For inquiries or bookings, email us at <a href="mailto:info@bellesardennes.be">info@bellesardennes.be</a> or call +32 123 456 789.
+      </p>
+      <p class="lang-content lang-fr">
+        Pour toute question ou réservation, envoyez-nous un email à <a href="mailto:info@bellesardennes.be">info@bellesardennes.be</a> ou appelez le +32 123 456 789.
+      </p>
+      <p class="lang-content lang-de">
+        Für Fragen oder Buchungen senden Sie uns eine E-Mail an <a href="mailto:info@bellesardennes.be">info@bellesardennes.be</a> oder rufen Sie uns an unter +32 123 456 789.
+      </p>
+    </section>
   </main>
-  <footer id="site-footer"></footer>
-  <script src="/assets/js/main.js"></script>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Belles Ardennes. 
+      <span class="lang-content lang-nl">Alle rechten voorbehouden.</span>
+      <span class="lang-content lang-en">All rights reserved.</span>
+      <span class="lang-content lang-fr">Tous droits réservés.</span>
+      <span class="lang-content lang-de">Alle Rechte vorbehalten.</span>
+    </p>
+  </footer>
+
+  <!-- JavaScript: Libraries (Swiper & FullCalendar) and Main Script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
